@@ -1,0 +1,6 @@
+{
+    "env": {
+        "mongodburl": "127.0.0.1",
+        "dbname": "techlog"
+    }
+}
