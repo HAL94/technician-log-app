@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-auto-25 {
+  margin: 25px auto;
+}
+
+mat-spinner {
+  margin: auto;
+}

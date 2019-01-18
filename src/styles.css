@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+  flex: 0.4;
+}
+
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+  text-align: center;
+}

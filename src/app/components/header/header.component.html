@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span><a routerLink="/">Tech Entries</a></span>
+  <span><a mat-button routerLinkActive="mat-accent"
+    *ngIf="isAuthenticated" routerLink="today-entries">Today's Entries</a></span>
+  <span><a mat-button routerLinkActive="mat-accent" routerLink="techentries">Techentries</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="!isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="login">Login</a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="signup">Signup</a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="add-entry">Add Entry</a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" (click)="onLogout()">Logout</a>
+    </li>
+  </ul>
+</mat-toolbar>

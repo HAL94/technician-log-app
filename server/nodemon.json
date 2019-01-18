@@ -1,6 +1,7 @@
 {
-    "env": {
-        "mongodburl": "127.0.0.1",
-        "dbname": "techlog"
-    }
+  "env": {
+    "mongodburl": "127.0.0.1",
+    "dbname": "techlog",
+    "JWTKEY": "secret key"
+  }
 }
