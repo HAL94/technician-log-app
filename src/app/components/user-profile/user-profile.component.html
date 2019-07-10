@@ -1,0 +1,41 @@
+<mat-spinner *ngIf="user == null"></mat-spinner>
+<div class="main-content" *ngIf="user !== null">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+         <app-image-upload></app-image-upload>
+          <div class="card-body">
+            <div class="card-info">
+              <h6 class="card-category">Technician</h6>
+              <h4 class="card-title" *ngIf="user">{{user.fname}} {{user.lname}}</h4>
+            </div>
+            <p *ngIf="user">
+              <!-- Don't be scared of the truth because we need to restart the human foundation in truth And I love you like
+              Kanye loves Kanye I love Rick Owens’ bed design but the back is... -->
+              {{user.aboutUser}}
+            </p>
+          </div>
+        </div>
+        <mat-action-list>
+            <a mat-list-item routerLink="edit-profile">
+              <mat-icon matListIcon>person</mat-icon> <div class="mat-list-text">About</div>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item >
+              <mat-icon matListIcon>email</mat-icon> <div class="mat-list-text">Change Email</div>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item >
+              <mat-icon matListIcon>vpn_key</mat-icon> <div class="mat-list-text">Change Password</div>
+            </a>
+            <mat-divider></mat-divider>
+        </mat-action-list>
+      </div>
+      <div class="col-md-8">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+</div>

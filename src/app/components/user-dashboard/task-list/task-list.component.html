@@ -1,0 +1,32 @@
+<div class="task-outer-container col-md-6">
+  <div class="col-md-12" style="overflow: auto; max-height: 600px;">
+    <div class="flex-container">
+      <button mat-stroked-button color="primary" (click)="onAddTask(' ')">
+        <mat-icon>add</mat-icon> Add Task
+      </button>
+      <button mat-stroked-button color="primary" class="min-wd mrg-10" [matMenuTriggerFor]="menu">{{listToBeFetched}}
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="refreshSelectedList('ALL')">All</button>
+        <button mat-menu-item (click)="refreshSelectedList('COMPLETE')">Completed</button>
+        <button mat-menu-item (click)="refreshSelectedList('PENDING')">Pending</button>
+      </mat-menu>
+    </div>
+    <ul *ngFor="let task of taskList; let ti = index;" class="col-md-12 task-list-flex">
+      <app-task [taskObj]="{task: task, index: ti}"
+        (statusChange)="onStatusChange()">
+      </app-task>
+
+      <app-subtask *ngFor="let st of task.subtasks; let sti = index"
+        [subtaskObj]="{task: task, subtask: st, stindex: sti, tindex: ti}">
+      </app-subtask>
+
+    </ul>
+  </div>
+  <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [showFirstLastButtons]="true"
+      [length]="totalTasks"
+       (page)="onChangedPage($event)" [pageIndex]="currentPage - 1"
+       (click)="scroller.emit(null)">
+    </mat-paginator>
+</div>

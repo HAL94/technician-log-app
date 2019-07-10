@@ -1,0 +1,104 @@
+li {
+  list-style: none;
+}
+
+.subtask {
+  transition: all 0.20s ease-in;
+  cursor: pointer;
+  margin: 13px 0;
+  border-radius: 8px;
+  float: right;
+}
+
+.subtask:hover {
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+}
+
+.checkmark {
+  position: absolute;
+  display: none;
+  font-size: 24px;
+  color: #23a4e0;
+}
+
+.subtask-container {
+  display: inline-flex;
+  width: 100%;
+}
+
+.subtask-edit {
+  float: right;
+  line-height: 0;
+  visibility: hidden;
+  transition: visibility 0.20s ease-in;
+}
+
+.subtask-edit mat-icon {
+  color: #ababab;
+}
+
+.subtask-title {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+
+.date-container {
+  border-radius: 4px;
+  border: 1px solid #e8eaed;
+  padding: 6px;
+  cursor: pointer;
+  background: transparent;
+  display: table;
+}
+
+.date-container-item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+textarea {
+  background: inherit;
+  border: none;
+  resize: none;
+  overflow: hidden;
+  word-break: break-all;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  /* transition: all 0.2s ease-in; */
+}
+
+.subtask:hover .subtask-edit {
+  visibility: visible;
+}
+
+::ng-deep mat-checkbox:hover .mat-checkbox-inner-container
+{
+  z-index: 10;
+}
+::ng-deep mat-checkbox:hover .checkmark{
+
+  position: absolute;
+  display: block;
+  left: 15px;
+  top: -6px;
+  z-index: 9;
+}
+
+mat-checkbox {
+  align-self: center;
+}
+
+.display-checkmark {
+  position: absolute;
+  display: block;
+  left: 15px;
+  top: -6px;
+  z-index: 9;
+}
+
+.date-container-item mat-icon {
+  color: #c0c4c7;
+}

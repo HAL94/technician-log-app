@@ -1,0 +1,126 @@
+<div class="relative-container col-xs-12 col-md-12" *ngIf="!dashboard">
+  <div class="flex-container full-ht-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
+
+<div class="main-content" *ngIf="dashboard">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-warning card-header-icon">
+            <div class="card-icon icon-one">
+              <mat-icon>av_timer</mat-icon>
+            </div>
+            <p class="card-category">Pending</p>
+            <h3 class="card-title" >{{dashboard.totalPending}}
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <mat-icon>warning</mat-icon>
+              Get More Space...
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-success card-header-icon">
+            <div class="card-icon icon-two">
+              <mat-icon>check</mat-icon>
+            </div>
+            <p class="card-category">Completed</p>
+            <h3 class="card-title" >{{dashboard.totalCompleted}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <mat-icon>date_range</mat-icon> Last 24 Hours
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-danger card-header-icon">
+            <div class="card-icon icon-three">
+              <mat-icon>note</mat-icon>
+            </div>
+            <p class="card-category">To-Do Tasks</p>
+            <h3 class="card-title" >{{dashboard.totalTasks}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <mat-icon>local_offer</mat-icon> Tracked from Github
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon icon-four">
+              <mat-icon>stars</mat-icon>
+            </div>
+            <p class="card-category">Monthly Achievment</p>
+            <h3 class="card-title">{{dashboard.monthlyTargetReached}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <mat-icon>update</mat-icon> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header-2 col-md-12">
+            <h4 class="card-header-title">Weekly Entries</h4>
+          </div>
+          <div class="row pd-20">
+            <app-weekly-entries>
+
+            </app-weekly-entries>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header-2 col-md-12" #target>
+            <h4 class="card-header-title">Your Tasks</h4>
+          </div>
+          <div class="col-md-12 pd-20">
+            <app-task-list (scroller)="scrollToCard(target)"></app-task-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header-2 col-md-12">
+            <h4 class="card-header-title">Your Activity</h4>
+          </div>
+          <div class="flex-container">
+              <div class="col-md-6 col-lg-6 pd-20">
+                <div [appChartInit]="'all-activity'">
+
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 pd-20">
+                <div [appChartInit]="'target-activity'">
+
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

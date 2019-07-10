@@ -1,0 +1,32 @@
+<div class="pd-20 task-edit-outer-container">
+    <button mat-stroked-button color="primary" (click)="saveFormChange()" [mat-dialog-close]="editObj">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button mat-stroked-button color="danger" (click)="delete()" style="float: right">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    <div class="task-edit-container col-md-12">
+      <form [formGroup]="subtaskForm" novalidate>
+        <textarea appTextareaAutosize class="col-md-12 mg-top-10"
+        formControlName="title">{{subtask.title}}</textarea>
+        <textarea appTextareaAutosize class="col-md-12 mg-top-10"
+        formControlName="details" placeholder="Add Details">{{subtask.details}}
+        </textarea>
+        <div class="col-md-12 flex-container vertical-centered-flex mg-top-10">
+          <span class="span-icon"><mat-icon>date_range</mat-icon></span>
+
+          <div matRipple class="date-toggle-div col-md-4"
+          (click)="toggleDateSelector()">
+            {{selectedDate ? selectedDate.toDateString() : 'Pick Date'}}
+            <mat-icon *ngIf="selectedDate" (click)="clearDate($event)">close</mat-icon>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="datepicker-container col-md-12"
+      *ngIf="toggleDatePicker" (click)="toggleDateSelector()">
+        <mat-calendar [selected]="subtaskForm.get('date').value" class="col-md-4"
+        (selectedChange)="onDateSelection($event)">
+        </mat-calendar>
+    </div>
+  </div>

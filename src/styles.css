@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mg-auto-25 {
+  margin: 25px auto;
+}
+
+.mg-top-10 {
+  margin-top: 10px;
+}
+
+.mg-right-10 {
+  margin-right: 10px;
+}
+
+.pad-0-10 {
+  padding: 0 10px;
+}
+
+.pad-0 {
+  padding: 0;
+}
+
+button {
+  outline: none;
+}
+
+mat-spinner, mat-footer-cell {
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.filter-search {
+  margin: auto;
+  width: 70%;
+  display: block;
+}
+
+
+mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+  flex: 0.4;
+}
+
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+  text-align: center;
+}
+
+.mat-card-header-text {
+  margin: 0;
+}
+
+.snackbar-bg-success {
+  background: green;
+}
+
+.snackbar-bg-fail {
+  background: red;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.pdl-16 {
+  padding-left: 16px;
+}
+
+.pdr-16 {
+  padding-right: 16px;
+}
+
+.wd-100 {
+  width: 100%;
+}
+
+mat-form-field .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0;
+}
+
+.bg-c {
+  background: #22A7F0;
+}
+
+.fl-r {
+  float: right;
+}
+
+.fl-l {
+  float: left;
+}

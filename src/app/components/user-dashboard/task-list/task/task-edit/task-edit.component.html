@@ -1,0 +1,46 @@
+<div class="pd-20 task-edit-outer-container" *ngIf="editObj">
+  <button mat-stroked-button color="primary" (click)="saveFormChange()" [mat-dialog-close]="editObj">
+    <mat-icon>save</mat-icon>
+  </button>
+  <button mat-stroked-button color="danger" (click)="delete()" style="float: right">
+    <mat-icon>delete_forever</mat-icon>
+  </button>
+  <div class="task-edit-container col-md-12">
+    <form [formGroup]="taskForm" novalidate>
+      <textarea appTextareaAutosize class="col-md-12 mg-top-10" #title
+      formControlName="title">{{task.title}}
+      </textarea>
+      <textarea appTextareaAutosize class="col-md-12 mg-top-10" #details
+      formControlName="details" placeholder="Add Details">
+      {{task.details}}
+      </textarea>
+      <div class="col-md-12 flex-container vertical-centered-flex mg-top-10">
+        <span class="span-icon"><mat-icon>date_range</mat-icon></span>
+
+        <div matRipple class="date-toggle-div col-md-4"
+        (click)="toggleDateSelector()">
+          {{selectedDate ? selectedDate.toDateString() : 'Pick Date'}}
+          <mat-icon *ngIf="selectedDate" (click)="clearDate($event)">close</mat-icon>
+        </div>
+      </div>
+      <div class="col-md-12 flex-container vertical-centered-flex mg-top-10">
+        <span class="span-icon"><mat-icon>list</mat-icon></span>
+        <button mat-button (click)="addSubtask()">Add Subtasks</button>
+      </div>
+      <div formArrayName="subtasks">
+        <div *ngFor="let subtaskForm of subtasksForm.controls;
+          let i = index" [formGroupName]="i" class="col-md-12 flex-container vertical-centered-flex">
+          <textarea appTextareaAutosize class="col-md-11 mg-top-10 mg-right-10"
+          formControlName="title"></textarea>
+          <button mat-button class="col-md-1" (click)="deleteSubtaskForm(i)"><mat-icon>delete</mat-icon></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="datepicker-container col-md-12"
+    *ngIf="toggleDatePicker" (click)="toggleDateSelector()">
+      <mat-calendar [selected]="taskForm.get('date').value" class="col-md-4"
+      (selectedChange)="onDateSelection($event)">
+      </mat-calendar>
+  </div>
+</div>

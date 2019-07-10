@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <span><a routerLink="/">Tech Logs</a></span>
+  <span><a mat-button routerLinkActive="mat-accent"
+    *ngIf="isAuthenticated" routerLink="today-entries">Today</a></span>
+  <span><a mat-button routerLinkActive="mat-accent" routerLink="techentries">Entries</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="!isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="login">Login</a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="signup">Signup</a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a mat-button routerLinkActive="mat-accent" routerLink="add-entry"> Add Entry <mat-icon>note_add</mat-icon></a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a mat-button [matMenuTriggerFor]="menu">
+        <div class="default-header-image" [ngStyle]="{ 'background-image': profileImagePath ? 'url(' + profileImagePath + ')'
+        : 'url('+ defualtImagePath +')'}"></div>
+        <mat-icon class="drop-down">arrow_drop_down</mat-icon>
+      </a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="user-profile">Profile</button>
+        <button mat-menu-item routerLink="user-dashboard">Dashboard</button>
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+      </mat-menu>
+    </li>
+  </ul>
+</mat-toolbar>

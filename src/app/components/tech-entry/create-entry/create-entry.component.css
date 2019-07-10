@@ -1,0 +1,16 @@
+.mg-auto-25 {
+  margin: 25px auto;
+}
+
+.form-section {
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn {
+  display: block;
+  margin: 10px auto;
+}
+
+

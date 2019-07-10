@@ -1,0 +1,30 @@
+<li #stli class="pd-10 subtask col-md-11">
+    <div class="subtask-container">
+        <mat-checkbox #cbox class="col-md-1"
+         value="true"
+         [checked]="subtask.status.match('COMPLETE')"
+         (change)="onStatusChange(cbox)"
+         >
+          <span class="checkmark" *ngIf="!cbox.checked">&#10004;</span>
+        </mat-checkbox>
+        <span class="subtask-title col-md-10 offset-md-2">
+          <textarea [appTextareaAutosize]="stdivider"
+          (change)="onTitleChange($event.target.value)"
+          [task-box]="stli" class="col-md-12"
+          >{{subtask.title.trim()}}</textarea>
+        </span>
+        <button mat-icon-button class="subtask-edit" (click)="onEditTask()">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+    <div class="subtask-info-container">
+      <div class="task-details-container" *ngIf="subtask.details">
+        <p>{{subtask.details}}</p>
+      </div>
+      <div class="date-container col-md-4" *ngIf="subtask.date">
+        <span class="date-container-item"><mat-icon>date_range</mat-icon></span>
+        <p class="date-container-item">{{subtask.date | date}}<p>
+      </div>
+    </div>
+    <hr #stdivider>
+</li>

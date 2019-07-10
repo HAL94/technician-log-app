@@ -1,0 +1,47 @@
+ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a
+{
+  text-decoration: none;
+  color: #fff;
+}
+
+.spacer
+{
+  flex: 1 1 auto;
+}
+
+ul
+{
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-left: 10px;
+}
+
+.default-header-image {
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-position: top;
+}
+
+.drop-down {
+  position: absolute;
+  top: 55%;
+  right: -5px;
+  transform: translateY(-50%);
+}
+
+.mat-menu-item {
+  outline: none;
+}

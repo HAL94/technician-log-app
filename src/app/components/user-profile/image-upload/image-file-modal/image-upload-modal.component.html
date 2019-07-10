@@ -1,0 +1,7 @@
+<div>
+  <mat-icon (click)="onClose()" *ngIf="!data.isValid">close</mat-icon>
+  <p *ngIf="!data.isValid">
+    The file you uploaded is invalid!
+  </p>
+  <mat-spinner *ngIf="data.isValid"></mat-spinner>
+</div>

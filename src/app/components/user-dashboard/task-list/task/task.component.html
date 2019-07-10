@@ -1,0 +1,26 @@
+<li class="pd-10 task" #li>
+    <div class="task-container">
+        <mat-checkbox #cbox class="col-md-1"
+         appCheckboxHover [checked]="task.status.match('COMPLETE')"
+          (change)="onStatusChange(cbox)" value="true">
+          <span class="checkmark" *ngIf="!cbox.checked">&#10004;</span>
+        </mat-checkbox>
+        <span class="task-title col-md-10">
+          <textarea [appTextareaAutosize]="divider" [task-box]="li" class="col-md-12"
+          (change)="onTitleChange($event.target.value)">{{task.title.trim()}}</textarea>
+        </span>
+        <button mat-icon-button class="task-edit" (click)="onEditTask()">
+          <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+    <div class="task-info-container">
+      <div class="task-details-container" *ngIf="task.details">
+        <p>{{task.details}}</p>
+      </div>
+      <div class="date-container col-md-4" *ngIf="task.date">
+        <span class="date-container-item"><mat-icon>date_range</mat-icon></span>
+        <p class="date-container-item">{{task.date | date}}<p>
+      </div>
+    </div>
+    <hr #divider>
+</li>

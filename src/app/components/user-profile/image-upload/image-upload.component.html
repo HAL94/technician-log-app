@@ -1,0 +1,15 @@
+
+<div class="card-avatar"
+[ngStyle]="{ 'background-image': profileImagePath ? 'url(' + profileImagePath + ')'
+: 'url('+ defualtImagePath +')'}">
+
+</div>
+<form [formGroup]="imgUploadForm">
+  <button mat-stroked-button type="button"
+  class="col-xs-1 col-sm-1" id="abs-btn-img-upload"
+  (click)="filePicker.click()"
+  >
+    <mat-icon>photo_camera</mat-icon>
+  </button>
+  <input type="file" #filePicker id="fileUploadInput" (change)="onImageSelection($event)">
+</form>
