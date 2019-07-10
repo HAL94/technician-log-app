@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './create-entry.component.html',
   styleUrls: ['./create-entry.component.css']
 })
+
 export class CreateEntryComponent implements OnInit, OnDestroy {
 
   entryForm: FormGroup;
