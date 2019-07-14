@@ -1,7 +1,5 @@
 # Technician Logger
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.0-beta.2.
-
 When I was working as Computer Technician, a lot of tracking of was paper based, this will include receiving requests in paper form, checking them as complete and handing them to Managment for further processing. I thought, why not put my skills to use by building a MEAN application. This by no means strictly follows the Business Process as this was done as a side project to gain more experience and to practice my Web Development Skills. And so this was used as a simple tool for my job as a Computer Technician. 
 As a technician I must install workstations or laptops for customers. A job request consists of one or more machines corresponding exactly to one user, in my application, I log these information for the technician as entries.   
 The objective is to track the large quantities of devices and customers I go through in a daily basis as a technician and see how much I achieved in a daily basis and overall, this will include tracking my pendings and completions of jobs and how much I completed in a monthly basis among a few extra tools. It will also enable me to utilize a to-do list to track tasks to be done for each job. 
