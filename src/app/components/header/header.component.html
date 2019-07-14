@@ -1,8 +1,15 @@
 <mat-toolbar color="primary">
-  <span><a routerLink="/">Tech Logs</a></span>
+
+  <span class="flex-container">
+    <a routerLink="/">
+      <img src="assets/log-white.svg" class="img-fluid" alt="Tech Logger" style="height: 50px; margin-top: -11px">
+      Tech Logs
+    </a>
+  </span>
   <span><a mat-button routerLinkActive="mat-accent"
     *ngIf="isAuthenticated" routerLink="today-entries">Today</a></span>
-  <span><a mat-button routerLinkActive="mat-accent" routerLink="techentries">Entries</a></span>
+  <span><a mat-button routerLinkActive="mat-accent" *ngIf="isAuthenticated"
+    routerLink="techentries">Entries</a></span>
   <span class="spacer"></span>
   <ul>
     <li *ngIf="!isAuthenticated">

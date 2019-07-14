@@ -1,0 +1,11 @@
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+
+:host {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

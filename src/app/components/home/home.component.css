@@ -1,0 +1,80 @@
+
+mat-card {
+  margin-top: 20px;
+}
+.title-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.intro-title {
+  margin: 0 0 24px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: center;
+}
+
+.main-description {
+  margin: 0 0 40px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: justify;
+}
+
+.tool-box {
+  border: 1px solid #f0f0f0;
+  margin: 10px;
+  box-shadow: 0px 0px 13px rgba(0,0,0,0.2);
+  min-height: 250px;
+  display: flex;
+}
+
+.tools {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tool-icon {
+  margin: auto;
+  display: block;
+}
+
+#expressjs {
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  color: #aeaeae;
+  letter-spacing: 0.55rem;
+  margin-top: 20px;
+}
+
+#date {
+  font-style: italic;
+  color: #aeaeae;
+  font-size: 15px;
+}
+
+.title-color {
+  color: #575454;
+}
+
+.content-color {
+  color: rgba(0,0,0,.87);
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+mat-list-item {
+  margin: 30px 0;
+  text-align: justify;
+}
+
+.mat-list-base .mat-list-item .mat-list-icon, .mat-list-base .mat-list-option .mat-list-icon {
+  padding: 0 15px 0 0;
+}

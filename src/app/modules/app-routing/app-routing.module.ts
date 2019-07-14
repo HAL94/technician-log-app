@@ -11,8 +11,10 @@ import { AuthGuard } from '../../guards/auth/auth.guard';
 import { AfterAuthGuard } from '../../guards/auth/after-auth.guard';
 import { TodayEntriesComponent } from 'src/app/components/tech-entry/today-entries/today-entries.component';
 import { UserDashboardComponent } from 'src/app/components/user-dashboard/user-dashboard.component';
+import { HomeComponent } from 'src/app/components/home/home.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent },
   {path: 'login', component: LoginComponent, canActivate: [AfterAuthGuard]},
   {path: 'signup', component: SignupComponent, canActivate: [AfterAuthGuard]},
   {path: 'techentries', component: TechEntryComponent, canActivate: [AuthGuard]},

@@ -3,12 +3,14 @@ import { CommonModule, DatePipe } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerModalComponent } from '../../../components/spinner-modal/spinner-modal.component';
+import { HomeComponent } from '../../../components/home/home.component';
 
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
-    SpinnerModalComponent
+    SpinnerModalComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    SpinnerModalComponent
+    SpinnerModalComponent,
+    HomeComponent
   ],
   entryComponents: [SpinnerModalComponent],
   providers: [DatePipe]
