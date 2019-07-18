@@ -1,7 +1,7 @@
 {
   "env": {
     "mongodburl": "uri here",
-    "mongodbpw": "pw was here",
+    "mongodbpw": "pw here",
     "dbname": "techlog",
     "JWTKEY": "secret key here"
   }
