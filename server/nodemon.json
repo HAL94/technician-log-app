@@ -1,8 +1,8 @@
 {
   "env": {
-    "mongodburl": "mongodb+srv://HAL:U1F2NpLfTftdcHpv@techlogcluster-lv44p.mongodb.net/techlog?retryWrites=true&w=majority",
+    "mongodburl": "uri here",
     "mongodbpw": "pw was here",
     "dbname": "techlog",
-    "JWTKEY": "CA_Qy(CAo_3`Z%nSQ'YN`Y'E.:|(4+G0^rk,W]:o|`WxHB_^`WBZGnJT!;T',q("
+    "JWTKEY": "secret key here"
   }
 }
